@@ -1,33 +1,37 @@
-function pal(str)
-{
-    var j=str.length-1;
-    for(let i=0;i<j/2;i++)
-    {
-        var x=str[i];
-        var y=str[j-1];
-        if(x!=y)
-        {
-            return false;
-        }
-    }
-    return true;
-}
-function is_pal(str)
-{
-    var ans=pal(str);
-    if(ans == true)
-    {
-        document.write("string is palindrome");
-    }
-    else{
-        document.write("string is not palindrome");
-    }
-    }
-var test= "racecar";
-is_pal(test);
-    
 
-
-        
-        
+ function check_palindrome( str )
+ {
+   let j = str.length -1;
+   for( let i = 0 ; i < j/2 ;i++)
+   {
+     let x = str[i] ;
+     let y = str[j-i];
+     if( x != y)
+     {
+       
+       return false;
+     }
+   }
+   
+   return true;
     
+ }
+
+ 
+ function is_palindrome( str )
+ {
+   
+   let ans = check_palindrome(str);
+   
+   if( ans == true )
+   {
+     console.log("passed string is palindrome ");
+   }
+   else
+   {
+     console.log("passed string not a palindrome");
+   }
+ }
+ 
+ let test = "karthik";
+ is_palindrome(test);
