@@ -1,9 +1,27 @@
-today=new Date();
+var countDownDate = new Date("Jan 1, 2023 15:37:25").getTime();
 
-var abc=new Date(today.getFullYear(), 12,21);
-if(today.getMonth()==01 && today.getDate()>09)
-{
-    abc.setFullYear(abc.getFullYear()+1);
-}
-var one_day=1000*60*60*24;
-console.log(Math.ceil((abc.getTime()-today.getTime())/(one_day)));
+
+var x = setInterval(function() {
+
+  
+  var now = new Date().getTime();
+
+
+  var distance = countDownDate - now;
+
+  
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+
+  document.write(days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ");
+
+  
+  if (distance < 0) {
+    clearInterval(x);
+    document.write( "EXPIRED");
+  }
+}, 1000)
